@@ -1,0 +1,98 @@
+.example-card {
+    max-width: 90vw;
+    background: #9796f0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-left: 15px;
+  }
+  
+  .example-header-image {
+    
+    background-size: cover;
+    border-radius: 50%;
+    border:3px solid maroon;
+  }
+
+  mat-card-title,mat-card-subtitle{
+    margin-left: 50px;
+  }
+
+  mat-card-title,mat-card-content,mat-card-subtitle{
+
+        font-size: 1em;
+  }
+
+  
+  .spacer {
+    width:10px !important;
+    border:80px solid transparent;
+   
+  }
+
+  .spacer2 {
+    width:0px !important;
+    border:10px solid transparent;
+   
+  }
+
+  .carita{
+
+      position:absolute;
+      right:10px;
+      top:10px;
+      width:50px;
+      height:50px;
+      border-radius: 50%;
+      z-index: 100;
+    
+      
+  }
+
+  .whatsapp{
+
+    background-image:url('../../../assets/comunicaciones/Whatsapp-icon.png');  
+    background-size: 100%;
+    position:absolute;
+    right:10px;
+    top:60px;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    z-index: 100;
+   
+    
+}
+
+.telefono{
+
+  background-image:url('../../../assets/comunicaciones/telefono.png');  
+  background-size: 100%;
+  position:absolute;
+  right:10px;
+  top:115px;
+  width:47px;
+  height:47px;
+  border-radius: 50%;
+  z-index: 100;
+ 
+  
+}
+
+
+.sms{
+
+  background-image:url('../../../assets/comunicaciones/sms.png');  
+  background-size: 100%;
+  position:absolute;
+  right:10px;
+  top:170px;
+  width:47px;
+  height:47px;
+  border-radius: 50%;
+  z-index: 100;
+ 
+  
+}

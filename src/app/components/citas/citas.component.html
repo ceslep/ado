@@ -1,0 +1,108 @@
+<div id="scrollId"></div>
+<mat-tab-group [selectedIndex]="tabSelectedIndex" (selectedTabChange)="onTabChange($event)">
+   
+    <mat-tab class="example-select">
+
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon">assignment</mat-icon>
+              <!-- Agenda -->
+            </ng-template>
+            <mat-form-field>
+                <mat-select touchUi placeholder="Paciente" [(value)]="selected" class="example-select" (selectionChange)="cambio($event)" touchUi [(ngModel)]="paciente">
+                    <mat-option value="undefined"></mat-option>
+                  <mat-option *ngFor="let nombre of nombres" [value]="nombre.paciente">
+                    {{nombre.nombres}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                    <input matInput [matDatepicker]="fecha" placeholder="Fecha Agenda" [(ngModel)]="serializedDate.value"  (dateChange)="addEvent('change', $event)" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="fecha"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #fecha disabled="false"></mat-datepicker>
+              </mat-form-field>
+             <mat-form-field>
+             <mat-select placeholder="Agenda" [(ngModel)]="agenda" (selectionChange)="cambio_agenda($event)">
+          
+                    <mat-option *ngFor="let agenda of agendas" [value]="agenda.nombre">
+                        {{agenda.descripcion}}
+                    </mat-option>
+                    </mat-select>
+      </mat-form-field>
+                  <button mat-mini-fab color="primary" (click)="recargar()"><mat-icon>reply</mat-icon></button>   
+       <div *ngIf="citas.length>0;else cargando">  
+            <cdk-virtual-scroll-viewport class="example-viewport"  itemSize="100">
+                    <items-agenda (propagar)="procesarPropagarHistoria($event)" (anamnesis)="procesarPropagarAnamnesis($event)" (pagos)="procesarPropagarPagos($event)" *ngFor="let cita of citas" [cita]="cita"></items-agenda> 
+            </cdk-virtual-scroll-viewport>
+       </div>
+      
+       <ng-template #cargando>
+        
+        <mat-spinner class="centrado"></mat-spinner>
+        
+       </ng-template>
+    
+    </mat-tab>
+    <mat-tab>  
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">start</mat-icon>
+           <!-- Pagos-->
+           
+          </ng-template>
+          <pagos [cita]="cita"></pagos>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">description</mat-icon>
+            <!-- Historia -->
+          </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">camera_alt</mat-icon>
+           <!--  Imágenes-->
+          
+          </ng-template>
+          <mat-form-field>
+            <mat-select touchUi placeholder="Seleccione Imágen" [(value)]="selected" class="example-select" (selectionChange)="ver_imagen($event)" touchUi [(ngModel)]="imagen">
+                <mat-option value="undefined"></mat-option>
+              <mat-option value="0">
+                Panoramica
+              </mat-option>
+              <mat-option value="1">
+                Perfil
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-slide-toggle
+          [disabled]="imagensrc==''"
+          (change)="zoom($event)"
+          >
+          
+          Ampliar
+          </mat-slide-toggle>
+          <cdk-virtual-scroll-viewport class="example-viewport"  itemSize="100">
+         
+            <div class="container">
+          <img class="i1" *ngIf="imagensrc!=''" 
+          [src]="imagensrc"
+          [style.width]="imagensize"
+          
+          >
+          </div>
+      
+          </cdk-virtual-scroll-viewport>
+         
+    </mat-tab>
+    <mat-tab label="Anamnesis">
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">assignment_ind</mat-icon>
+           <!--  Anamnésis-->
+           
+          </ng-template>
+        <anamnesis [cita]="cita" (volver)="procesarVolver($event)"></anamnesis>
+    </mat-tab>
+</mat-tab-group>
+
+<button mat-fab class="goto"  (click)="gotoTop()">
+    <mat-icon aria-label="">arrow_upward</mat-icon>
+  </button>

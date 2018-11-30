@@ -1,0 +1,43 @@
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Datos Principales
+        </mat-panel-title>
+        <mat-panel-description>
+          <span *ngIf="!cita;else nombres">
+          Información Personal Entre Otros
+          </span>
+          <ng-template #nombres class="nombres">{{ cita.nombres }}</ng-template>
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+  
+
+      <datos-principales [cita]="cita" [datosPaciente]="datosPaciente" (volver)="procesarVolver($event)"></datos-principales>
+
+  
+      
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel  hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Información Adicional
+        </mat-panel-title>
+        <mat-panel-description>
+          Datos de Entrada
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <informacion-adicional [cita]="cita" [datosPaciente]="datosPaciente" (volver)="procesarVolver($event)"></informacion-adicional>
+  
+      
+    </mat-expansion-panel>
+  
+    
+  
+  </mat-accordion>
+  

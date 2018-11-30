@@ -1,0 +1,121 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+     
+      <mat-card-title *ngIf="cita">{{ cita.identificacion }}</mat-card-title>
+     
+      
+      <mat-card-subtitle *ngIf="cita">{{ cita.nombres }}</mat-card-subtitle>
+      
+    </mat-card-header>
+    
+    <mat-card-content>
+      
+        <img *ngIf="cita" src="{{ cita.foto }}" alt="1" width="20%" class="image-rounded" (click)="propagarVolver()">
+      
+       <div *ngIf="datosPaciente">
+       
+        <form class="example-form">
+            <mat-grid-list cols="4" rowHeight="55px">
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Fecha Registro" name="fecha" [(ngModel)]="datosPaciente.fecha" >
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Historia" name="historia" [(ngModel)]="datosPaciente.historia" >
+                    </mat-form-field>
+                </mat-grid-tile>  
+                <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Tipo de Documento" name="tdei" [(ngModel)]="datosPaciente.tdei" >
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Identificación" name="identificacion" [(ngModel)]="datosPaciente.identificacion" >
+                        </mat-form-field>
+                    </mat-grid-tile>    
+         
+          </mat-grid-list>
+          
+            <mat-grid-list cols="4" rowHeight="55px">
+                <mat-grid-tile>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Primer Nombre" name="nombre1" [(ngModel)]="datosPaciente.nombre1" >
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Segundo Nombre" name="nombre2" [(ngModel)]="datosPaciente.nombre2" >
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Primer Apellido" name="apellido1" [(ngModel)]="datosPaciente.apellido1" >
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Segundo Apellido" name="apellido2" [(ngModel)]="datosPaciente.apellido2" >
+                    </mat-form-field>
+                </mat-grid-tile>
+              </mat-grid-list>
+              <mat-grid-list cols="4" rowHeight="55px">
+                  <mat-grid-tile>
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Genero" name="genero" [(ngModel)]="datosPaciente.sexo" >
+                      </mat-form-field>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Fecha de Nacimiento" name="fecnac" [(ngModel)]="datosPaciente.fecnac" >
+                      </mat-form-field>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Edad" name="edad" [(ngModel)]="datosPaciente.edad" >
+                      </mat-form-field>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Estado" name="estado" [(ngModel)]="datosPaciente.estado" >
+                      </mat-form-field>
+                  </mat-grid-tile>
+                </mat-grid-list>
+                <mat-grid-list cols="3" rowHeight="55px">
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Lugar de nacimiento" name="lugarnacimiento" [(ngModel)]="datosPaciente.lugarnacimiento" >
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Dirección de Residencia" name="direccion_residencia" [(ngModel)]="datosPaciente.direccion_residencia" >
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Barrio" name="barrio" [(ngModel)]="datosPaciente.barrio" >
+                            </mat-form-field>
+                        </mat-grid-tile>
+                  </mat-grid-list>
+                  <mat-grid-list cols="1" rowHeight="55px">
+                    <mat-grid-tile>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Ciudad de Residencia" name="ciudad_residencia" [(ngModel)]="datosPaciente.ciudad_residencia" >
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    
+                  </mat-grid-list>
+        </form>   
+       </div>
+
+      
+
+    </mat-card-content>
+    <mat-card-actions>
+     
+    </mat-card-actions>
+  </mat-card>

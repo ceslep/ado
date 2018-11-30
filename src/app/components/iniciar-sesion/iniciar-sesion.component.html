@@ -1,0 +1,21 @@
+<div class="example-container">
+    <h3 class="example-text">Iniciar Sesión</h3>
+    <mat-form-field>
+      <input matInput placeholder="Nombre de usuario">
+    </mat-form-field>
+  
+    <mat-form-field>
+        <mat-select placeholder="Agenda" [(value)]="selected">
+          
+          <mat-option *ngFor="let agenda of agendas" value="agenda.nombre">
+            {{agenda.descripcion}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+    <mat-form-field>
+        <input matInput type="password" placeholder="Contraseña">
+    </mat-form-field>
+
+
+  </div>

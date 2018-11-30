@@ -1,0 +1,11 @@
+<h4 mat-dialog-title>Firma: {{data.name}}</h4>
+<mat-dialog-content class="mat-typography">
+  <canvas id="myCanvas" width="430" height="350" style='border:1px solid black;'>
+			
+  </canvas>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="limpiar()">Limpiar</button>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Firmar</button>
+</mat-dialog-actions>

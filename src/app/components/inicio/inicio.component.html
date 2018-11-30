@@ -1,0 +1,37 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+      
+      <mat-list>
+        <mat-list-item> <a mat-button routerLink="/iniciar_sesion" routerLinkActive="active"  (click)="sidenav.toggle()">Iniciar Sesión</a> </mat-list-item>
+        <mat-list-item> <a mat-button routerLink="/citas" routerLinkActive="active"  (click)="sidenav.toggle()">Citas</a> </mat-list-item>
+        <mat-list-item> <a mat-button>Pacientes</a> </mat-list-item>
+        <mat-list-item> <a mat-button>Configuración</a> </mat-list-item>
+       
+       </mat-list>
+      
+      
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+   
+    
+  
+  
+    <mat-toolbar color="primary" class="fixed-header">
+      <mat-toolbar-row class="example-container">
+        <a (click)="sidenav.toggle()"><mat-icon class="example-icon">menu</mat-icon></a>
+        A.D.O.
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon">favorite</mat-icon>
+        
+      </mat-toolbar-row>
+      </mat-toolbar>
+      <div class="outlet">
+        <router-outlet></router-outlet>
+      </div>
+  
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+

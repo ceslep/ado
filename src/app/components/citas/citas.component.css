@@ -1,0 +1,63 @@
+mat-tab-group{
+
+      width:100%;
+}
+
+example-form {
+    min-width: 150px;
+    max-width: 100%;
+    width: 90%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .example-select{
+   
+    width:100%;
+    
+  }
+
+  
+.goto{
+
+      position:fixed;
+      left:80vw;
+      top:80vh;
+      z-index:20;
+}
+
+.centrado{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.example-viewport {
+  height: 95vh;
+  width: 95vw;
+  border: 0px solid black;
+}
+
+
+.container {
+  width: 100%;
+  height: auto;
+
+  overflow: auto;
+}
+.i1{
+     
+ 
+    
+      height: auto;
+
+      border:1px solid blue;
+      background-image: url("../../../assets/imagenes/panoramica.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      overflow: auto;
+}
